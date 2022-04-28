@@ -1,1 +1,10 @@
-<mf-app-nx-welcome></mf-app-nx-welcome> <router-outlet></router-outlet>
+<div class="container">
+  <ng-container *ngFor="let cat of cats | async">
+     <div class="child" (click)="toggleSelectCat(cat)" [ngClass]="{ selected: isSelected(cat.id) | async }">
+         <h3>{{ cat.title }}</h3>
+        <div>
+          <img [src]="cat.url" alt="" />
+        </div>
+      </div>
+   </ng-container>
+</div>

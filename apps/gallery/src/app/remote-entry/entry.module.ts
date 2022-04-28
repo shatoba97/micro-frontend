@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
+import { AppComponent } from '../app.component';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-
+import { GalleryStoreModule } from '@mf-app/shared/data-store';
+import { NgModule } from '@angular/core';
 import { RemoteEntryComponent } from './entry.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [RemoteEntryComponent],
   imports: [
-    CommonModule,
     RouterModule.forChild([
       {
         path: '',
-        component: RemoteEntryComponent,
+        component: AppComponent,
       },
     ]),
   ],
