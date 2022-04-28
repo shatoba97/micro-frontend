@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { GalleryFacade } from '@mf-app/shared/data-store';
 
 @Component({
   selector: 'mf-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'shell';
+export class AppComponent implements OnInit{
+  constructor(private galleryFacade: GalleryFacade) {}
+    ngOnInit(): void {
+        this.galleryFacade.init();
+    }
 }
